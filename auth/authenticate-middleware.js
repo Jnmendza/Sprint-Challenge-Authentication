@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const Users = require('../user/user-model.js')
+// const Users = require('../user/user-model.js')
 
 /* 
   complete the middleware code to check if the user is logged in
@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
               res.status(401).json({  message: 'Invalid Credentials' })
           } else {
               req.decodedJwt = decodedToken;
-              next()
+              next();
           }
       });
   } else {
